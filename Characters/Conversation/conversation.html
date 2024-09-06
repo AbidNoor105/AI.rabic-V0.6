@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="icon" href="../icon.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters - AI.rabic</title>
+    <link rel="stylesheet" href="conversation.css">
+</head>
+<body>
+    <div class="header">
+        <button onclick="location.href='../../index.html';" class="home-button">
+            <i class="fas fa-home"></i> <!-- Font Awesome Home Icon -->
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="chat-container" id="chat-container">
+            <!-- Chat bubbles will be dynamically added here -->
+        </div>
+    </div>
+ 
+    <!-- Modal Structure -->
+    <div id="questionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="questiontext" id="questionText" dir = "rtl"></p>
+            <input class = "questioninput" type="text" id="responseInput" placeholder="Ask a question about the text...">
+            <p class = "aiResponse" id="aiResponse"></p> <!-- Display AI response here -->
+            <button onclick="submitQuestion()">Submit</button>
+        </div>
+    </div>
+
+    <div id="howDoISayModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('howDoISayModal')">&times;</span>
+            <input type="text" id="howDoISayInput" class="questioninput" placeholder="Enter phrase...">
+            <div id="responseContainer" style="display: flex; align-items: center; gap: 10px;">
+                <p id="aiResponseHowDoISay" class="ai-response"></p> <!-- Placeholder for AI response -->
+                <div class="speaker">
+                    <button id="speakButton" onclick="speakCurrentText()" style="display: none;">🔊</button>
+                </div>
+            </div>
+            <button id="submitHowDoISay" onclick="submitHowDoISay()">Submit</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="controls">
+        <button id="talk-btn">Push to Talk</button>
+        <button id="how-do-i-say-btn">How do I say?</button>  <!-- New button -->
+        <button id="translate">Translate</button>
+        <label for="lang-toggle">Speak in English:</label>
+        <input type="checkbox" id="lang-toggle">
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+</body>
+</html>

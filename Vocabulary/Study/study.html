@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Page</title>
+    <link rel="stylesheet" href="studyStyles.css">
+
+    <link rel="icon" href="../../icon.png">
+</head>
+<body>
+    <h1>Study Flashcards</h1>
+    <div class="button-bar">
+        <button class="mode-button" onclick="showFlashcards()">Flashcards</button>
+        <button class="mode-button" onclick="showMatching()">Quiz</button>
+        <button class="mode-button" onclick="showConversation()">Conversation</button>
+    </div>
+    <div id="flashcardsContainer"></div>
+    <script src="studyScript.js"></script>
+
+    <!-- Matching Modal -->
+    <div id="matchingModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeMatchingModal()">&times;</span>
+            <h2>Quiz - <span id="questionNumber">Question 1</span></h2>
+            <p id="randomWord" class="question"></p>
+            <div class="options-container"></div>
+            <div class="navigation">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="flashcardsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeFlashcards()">&times;</span>
+            <h2>Flashcard Viewer</h2>
+            <div id="modal-flashcard" class="modal-flashcard">
+                <div id="modalEnglish" class="english flashcard-part">Sample English</div>
+                <div id="modalArabic" class="arabic flashcard-part">نموذج عربي</div>
+            </div>
+            <div class="navigation">
+                <button class="navigation-button" onclick="previousFlashcard()">Back</button>
+                <span id="flashcardIndex">Card 1 of X</span>
+                <button class="audio-button" onclick="playCurrentAudio()">🔊</button>
+                <button class="navigation-button" onclick="nextFlashcard()">Next</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+

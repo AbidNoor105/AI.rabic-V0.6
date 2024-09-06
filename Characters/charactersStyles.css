@@ -1,0 +1,134 @@
+
+
+.main-menu {
+    display: flex;
+    flex-direction: row; /* Changed from column to row */
+    align-items: center;
+    justify-content: center;
+    height: calc(25%);
+}
+
+
+.image-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 25%;
+    height: 25%; /* Increased height to accommodate the label */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-button img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+    border-radius: 30px;
+}
+
+.image-button:hover img {
+    transform: scale(1.1);
+}
+
+.button-label {
+    font-size: 18px;
+    color: white;
+    margin-top: 5px; /* Space between the image and the text */
+}
+
+.button-label {
+    font-size: 22px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 5px 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners for the label background */
+    text-shadow: none; /* Removing text shadow if background is used */
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    width: 90%; /* Limiting the width to keep it tidy */
+    text-align: center; /* Centering text within the label */
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Other styles for positioning and appearance */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Darken background */
+    z-index: 100; /* Make sure it's on top */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 60%; /* Adjusted width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Rounded corners */
+}
+
+.close {
+    align-self: flex-end;
+    margin-top: -10px;
+    margin-right: -10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#characterImage {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px; /* Added margin */
+    border-radius: 50%; /* Circle shape */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+#characterDescription {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#topicInput {
+    padding: 10px;
+    width: 80%; /* Adjusted width */
+    margin-bottom: 20px; /* Spacing */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    font-size: 16px;
+    color: white;
+    background-color: #4da580;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #398d6c;
+}
+
+
+

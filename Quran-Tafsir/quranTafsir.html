@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Quran Study</title>
+	    <link rel="icon" href="../icon.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="quranTafsirStyles.css">
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../index.html">AI.rabic</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="../index.html">Home</a></li>
+											<li><a href="../Characters/characters.html">Conversations</a></li>
+											<li><a href="../Vocabulary/vocabulary.html">Vocabulary</a></li>
+											<li><a href="quranTafsir.html">Quran Tafsir</a></li>
+											<li><a href="#">Log In</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Quran Tafsir</h2>
+							<p>Study and learn the Quran</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+					<!-- Ayah Searcher -->
+				    <div class="content">
+				        <input type="number" id="surahInput" placeholder="Enter Surah Number" min="1" max="114">
+				        <input type="number" id="ayahInput" placeholder="Enter Ayah Number" min="1" max="286">
+				        <button onclick="fetchAyah()">Get Ayah</button>
+				        <p id="ayahText"></p> <!-- Display the Ayah text here -->
+				    </div>
+								
+							</div>
+						</section>
+
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<ul class="copyright">
+							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script src="quranTafsir.js"></script>
+
+	</body>
+</html>

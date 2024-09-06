@@ -1,0 +1,431 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    background: linear-gradient(to bottom, black, #63d297); /* Updated background */
+    overflow: hidden; /* Disable body scrolling */
+}
+ 
+.container {
+    display: flex;
+    width: 175%; /* Ensures container takes full width of the viewport */
+    justify-content: space-between; /* Maximizes space between the first and last children */
+    align-items: center; /* Center items vertically */
+    padding: 50px; /* Adds padding to the left and right to prevent touching the edges */
+    position: absolute; /* Allows absolute positioning inside the container */
+}
+
+.main-title {
+    position: absolute; /* Keeps the title from affecting layout */
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 72px;
+    margin: 10px 0;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.window {
+    background: #63d297;
+    color: #fff;
+    border: 1px solid #4da580;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-family: "Times New Roman", Times, serif;
+    align-items: center;
+    font-size: 22px;
+
+}
+
+textarea, button {
+    width: 100%; /* Ensures full width usage inside the window */
+}
+
+textarea {
+    height: 100vh;
+    padding: 0px;
+    border: 1px solid #4da580;
+    background: #ffffff;
+    color: #000000;
+    resize: none;
+    border-radius: 8px;
+    font-size: 25px;
+    font-family: "Times New Roman", Times, serif;
+
+}
+
+button {
+    padding: 10px;
+    background-color: #4da580;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #398d6c;
+}
+
+
+
+#language-switch {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    color:  white;
+    font-size: 25px;
+    font-family: "Times New Roman", Times, serif;
+
+}
+
+.header {
+    width: 100%; /* Full width */
+    height: 15%; /* Height of the header */
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Fixed at the top */
+    top: 0; /* Top of the viewport */
+    left: 0; /* Aligns to the left side */
+    z-index: 1000; /* Ensures it stays on top */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    position: absolute; /* Keeps the title from affecting layout */
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 72px;
+    margin: 10px 0;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.additional-info {
+    font-size: 24px;
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    justify-content: space-around; /* Distribute space */
+    width: 100%; /* Take up full width of header */
+    font-family: "Times New Roman", Times, serif;
+}
+
+.additional-text {
+    margin: 0 50px; /* Space between the text items */
+}
+
+/* Adjust the body's top padding to not overlap content */
+body {
+    padding-top: 60px; /* Adjust based on header height */
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Adjust based on your layout needs */
+    max-width: 600px; /* Maximum width of the chat area */
+    margin: auto;
+    overflow-y: auto; /* Allows scrolling */
+    height: 60vh; /* Adjust based on your layout needs */
+    background-color: #f5f5f5; /* Light grey background */
+    padding: 20px; /* Padding around the chat area */
+    border-radius: 20px;
+}
+
+.chat-bubble {
+    max-width: 70%;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: #9bdeac; /* Light green background for visibility */
+    color: black; /* Text color */
+    font-size: 16px; /* Font size for chat */
+    position: relative; /* Necessary for positioning */
+}
+
+.controls {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(100, 100, 100, 0.5); /* Semi-transparent background to see the buttons */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.chat-bubble {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    color: black; /* Text color */
+    font-size: 16px; /* Font size for chat */
+    display: inline-block; /* This makes the bubble size according to the content */
+    max-width: 80%; /* To prevent it from being too wide */
+    word-break: break-word; /* Ensures the text wraps inside the bubble */
+}
+
+.user {
+    background-color: #0f9d58; /* Greenish background for user bubbles */
+    align-self: flex-end; /* Aligns the bubble to the right */
+}
+
+.ai {
+    background-color: #4285f4; /* Blue background for AI bubbles */
+    align-self: flex-start; /* Aligns the bubble to the left */
+}
+
+.translation {
+    background-color: #4285f4; /* Different color for translation bubbles */
+    align-self: flex-start; /* Aligns the bubble to the left, adjust if needed */
+}
+
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 100px);  /* Adjusted height to account for header */
+    gap: 20px; /* Space between buttons */
+}
+
+button {
+    background-color: #4da580;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px; /* More pronounced rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+button:hover {
+    background-color: #398d6c;
+    transform: translateY(-3px);
+}
+
+.home-button {
+    background: none;
+    border: none;
+    color: white; /* Adjust color to fit your design */
+    cursor: pointer;
+    font-size: 24px; /* Icon size, adjust as needed */
+    position: absolute;
+    right: 90vw; /* Position it from the left edge to make it clearly visible */
+    top: 20px; /* Position it from the top edge */
+    z-index: 1500; /* Make sure it's above all other elements */
+    padding: 10px; /* Padding around the icon */
+    width: 6vw;
+
+}
+
+.home-button:hover {
+    color: #4da580; /* Hover effect for color change */
+}
+
+.input-area {
+    width: 100%; /* Adjust width to fit within the container */
+    padding: 10px; /* Adds padding around the input area */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    display: flex; /* Flex layout to align input and button */
+    justify-content: center; /* Centers the items horizontally */
+    align-items: center; /* Aligns items vertically */
+}
+
+#text-input {
+    flex: 1; /* Allows input to fill the space */
+    margin-right: 10px; /* Space between input and button */
+    padding: 8px; /* Padding inside the input */
+}
+
+#send-btn {
+    padding: 8px 16px; /* Padding inside the button */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: none;
+    width: 80%;
+    height: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+
+#modalTitle, #questionText {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    align-self: center;
+    text-align: center;
+}
+
+#responseInput {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.tooltip {
+    position: relative; /* Essential for absolute positioning of the tooltip */
+    display: inline-block; /* Keep the flow of text */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden; /* Hidden by default */
+    background-color: #f9f9f9; /* Light background for the tooltip */
+    color: black; /* Text color */
+    text-align: left;
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding for aesthetic spacing */
+    position: absolute; /* Position absolutely to float above content */
+    z-index: 1; /* Ensure it sits on top */
+    bottom: -20px; /* Position below the word */
+    left: 0; /* Align to the left of the word */
+    white-space: nowrap; /* Ensure the text does not wrap */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s; /* Transition for the fade effect */
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible; /* Make visible on hover */
+    opacity: 1; /* Fully opaque */
+}
+
+
+#question-button {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.question-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#questionText span:hover {
+    color: #0056b3;  /* Change color on hover */
+    text-decoration: underline;  /* Underline to indicate it's clickable */
+}
+
+
+.questioninput {
+    width: 80%; // Makes the input take most of the modal width
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#submitHowDoISay {
+    padding: 10px 20px;
+    background-color: #4da580;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#submitHowDoISay:hover {
+    background-color: #398d6c;
+}
+
+.ai-response {
+    color: #333;
+    padding: 10px;
+    margin-top: 20px; // Adds space above the response
+    font-size: 16px;
+    text-align: center;
+}
+
+#responseContainer {
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center; // Ensure it's centered
+    padding: 10px; // Check if enough padding is given
+    width: 100%; // Ensure full width is utilized
+}
+
+#speaker {
+    aspect-ratio: 1 / 1; // Ensures the width and height maintain a 1:1 ratio
+    width: 100%; // Ensure full width is utilized
+}
+
+#speakButton {
+    background: #4da580;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#speakButton:hover {
+    background: #398d6c;
+}
+
+
+
+

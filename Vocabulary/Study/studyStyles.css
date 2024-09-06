@@ -1,0 +1,253 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    background: linear-gradient(to bottom, black, #63d297); /* Gradient background */
+    overflow: auto; 
+}
+
+h1 {
+    color: #ffffff; /* White text for header */
+    text-align: center;
+    margin: 30px 0; /* Adjusted margin for header */
+}
+#flashcardsContainer {
+    width: 80%; /* Responsive width */
+    padding: 20px; /* Padding for internal spacing */
+    background-color: #fefefe; /* Light background for the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 20px; /* Space at the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flashcard {
+    background-color: #fff; /* White background */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between; /* Space between English and Arabic */
+    align-items: center; /* Align items vertically */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 90%; /* Full width within container */
+    font-size: 30px; /* Adjusted font size for better readability */
+}
+
+.flashcard .english, .flashcard .arabic {
+    flex: 1; /* Each part takes equal space */
+    text-align: center; /* Center align text */
+    padding: 12px; /* Padding around text */
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    border-radius: 5px; /* Rounded corners for the text blocks */
+}
+
+
+.flashcard .english {
+    background-color: lightblue; /* Light blue background for English part */
+}
+
+.flashcard .arabic {
+    background-color: lightcoral; /* Light coral background for Arabic part */
+    direction: rtl; /* Right-to-left text direction for Arabic */
+}
+
+
+
+/* Modal Flashcard Container */
+.modal-flashcard-container {
+    width: 80%; /* Responsive width */
+    padding: 20px; /* Padding for internal spacing */
+    background-color: #fefefe; /* Light background for the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 20px; /* Space at the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Modal Flashcard Styling */
+.modal-flashcard {
+    background-color: #fff; /* White background */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Increased padding */
+    margin: 20px 0; /* Adjusted margin for better spacing */
+    display: flex;
+    justify-content: space-between; /* Space between English and Arabic */
+    align-items: center; /* Center items vertically */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 95%; /* Increased width within container */
+    font-size: 60px; /* Adjusted font size for better readability */
+}
+
+/* Styling for English and Arabic parts within the flashcard */
+.modal-flashcard .english, .modal-flashcard .arabic {
+    flex: 1; /* Each part takes equal space */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Increased padding for text */
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    border-radius: 5px; /* Rounded corners for the text blocks */
+}
+
+.modal-flashcard .english {
+    background-color: lightblue; /* Light blue background for English part */
+}
+
+.modal-flashcard .arabic {
+    background-color: lightcoral; /* Light coral background for Arabic part */
+    direction: rtl; /* Right-to-left text direction for Arabic */
+}
+
+
+
+.audio-button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 10px; /* Ensure the button has adequate spacing */
+    color: #4da580; /* Style color to match your button color scheme */
+}
+
+.audio-button:hover {
+    color: #398d6c; /* Darker shade on hover */
+}
+
+.button-bar {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 20px;
+}
+
+.mode-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #4da580;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.mode-button:hover {
+    background-color: #398d6c;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    width: 80%; /* Adjust width as necessary */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the modal content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center all the text inside the modal content */
+}
+
+.modal-content h2 {
+    text-align: center; /* Ensure header is centered */
+}
+
+#questionNumber {
+    font-weight: normal; /* Adjust styling as needed */
+}
+
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navigation-button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #4da580;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navigation-button:hover {
+    background-color: #398d6c;
+}
+
+
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.option-button {
+    background-color: #4da580;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    flex-basis: 45%; /* Adjust the size to fit 2 per row responsively */
+    font-size: 30px;
+}
+
+.option-button:hover {
+    background-color: #398d6c;
+}
+
+.option-button.wrong {
+    background-color: red;
+    color: white; /* Ensure text is still readable */
+}
+
+
+.question {
+    font-size: 60px;
+}
+
+
+
